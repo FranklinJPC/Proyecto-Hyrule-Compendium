@@ -83,6 +83,9 @@ const renderIndex = (req,res)=>{
 const renderAbout = (req, res)=>{
   res.render('about')
 }
+const renderError = (req, res)=>{
+  res.render('error')
+}
 
 module.exports ={
     renderIndex,
@@ -91,5 +94,6 @@ module.exports ={
     verAPImonstruos,
     verAPImateriales,
     weaponsAPI,
-    renderAbout
+    renderAbout,
+    renderError
 }

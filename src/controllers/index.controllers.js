@@ -22,6 +22,20 @@ const creaturesAPI = (req,  res) => {
       return response.json();
     })
     .then(data => {
+      res.render('creatures', data.data)
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({ error: 'Error al obtener los datos de la API' });
+    });
+};
+
+const verAPItesoros = (req,  res) => {
+  fetch('https://botw-compendium.herokuapp.com/api/v2/category/treasure')
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
       res.render('tesoros', data
       )
     })
@@ -72,8 +86,10 @@ const renderAbout = (req, res)=>{
 
 module.exports ={
     renderIndex,
-    verAPI,
+    creaturesAPI,
     verAPItesoros,
     verAPImonstruos,
     verAPImateriales,
+    weaponsAPI,
+    renderAbout
 }

@@ -1,12 +1,15 @@
 const {Router} = require('express')
-const {/*rutas*/renderIndex,  verAPI, renderArmas} = require('../controllers/index.controllers.js')
+const {/*rutas*/renderIndex,  weaponsAPI, creaturesAPI, renderAbout} = require('../controllers/index.controllers.js')
 
 
 const router = Router()
 
 router.get('/', renderIndex)
-router.get('/apiPrueba', verAPI)
-router.get('/armas', verAPI)
+router.get('/apiPrueba', weaponsAPI)
+router.get('/armas', weaponsAPI)
+router.get('/creatures', creaturesAPI)
+router.get('/about', renderAbout)
+
 //....
 // Se colocan las demas 
 

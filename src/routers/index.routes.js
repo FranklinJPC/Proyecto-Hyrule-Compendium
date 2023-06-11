@@ -1,15 +1,16 @@
 const {Router} = require('express')
-const {/*rutas*/renderIndex,  weaponsAPI, creaturesAPI, renderAbout} = require('../controllers/index.controllers.js')
+const {renderIndex,  verAPI, verAPItesoros, verAPImonstruos, verAPImateriales} = require('../controllers/index.controllers.js')
+
 
 
 const router = Router()
 
 router.get('/', renderIndex)
-router.get('/apiPrueba', weaponsAPI)
-router.get('/armas', weaponsAPI)
-router.get('/creatures', creaturesAPI)
-router.get('/about', renderAbout)
-
+router.get('/apiPrueba', verAPI)
+router.get('/armas', verAPI)
+router.get('/tesoros', verAPItesoros)
+router.get('/monstruos', verAPImonstruos)
+router.get('/materiales', verAPImateriales)
 //....
 // Se colocan las demas 
 

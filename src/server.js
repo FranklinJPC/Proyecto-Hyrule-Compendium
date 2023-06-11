@@ -21,5 +21,4 @@ app.use(require('./routers/index.routes'))
 // Al usar archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')))
 
-
 module.exports = app

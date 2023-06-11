@@ -2,6 +2,7 @@ const {Router} = require('express')
 const {renderIndex,  verAPI, verAPItesoros, verAPImonstruos, verAPImateriales} = require('../controllers/index.controllers.js')
 
 
+
 const router = Router()
 
 router.get('/', renderIndex)

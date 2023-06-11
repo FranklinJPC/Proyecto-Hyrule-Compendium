@@ -1,5 +1,6 @@
-// API de prueba
-const verAPI = (req,  res) => {
+
+// API de armas
+const weaponsAPI = (req,  res) => {
     fetch('https://botw-compendium.herokuapp.com/api/v2/category/equipment')
       .then(response => {
         return response.json();
@@ -14,8 +15,9 @@ const verAPI = (req,  res) => {
       });
 };
 
-const verAPItesoros = (req,  res) => {
-  fetch('https://botw-compendium.herokuapp.com/api/v2/category/treasure')
+// API de Criaturas
+const creaturesAPI = (req,  res) => {
+  fetch('https://botw-compendium.herokuapp.com/api/v2/category/creatures')
     .then(response => {
       return response.json();
     })
@@ -62,6 +64,9 @@ const verAPImateriales = (req,  res) => {
 // Envio a las rutas
 const renderIndex = (req,res)=>{
     res.render('index')
+}
+const renderAbout = (req, res)=>{
+  res.render('about')
 }
 
 module.exports ={

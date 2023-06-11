@@ -1,19 +1,32 @@
+const axios = require('axios');
 
 // API de armas
-const weaponsAPI = (req,  res) => {
-    fetch('https://botw-compendium.herokuapp.com/api/v2/category/equipment')
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        res.render('armas', data
-        )
-      })
-      .catch(error => {
-        console.log(error);
-        res.status(500).json({ error: 'Error al obtener los datos de la API' });
-      });
+
+const weaponsAPI = (req, res) => {
+  axios.get('https://botw-compendium.herokuapp.com/api/v2/category/equipment')
+    .then(response => {
+      res.render('armas', response.data);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({ error: 'Error al obtener los datos de la API' });
+    });
 };
+
+// const weaponsAPI = (req,  res) => {
+//     fetch('https://botw-compendium.herokuapp.com/api/v2/category/equipment')
+//       .then(response => {
+//         return response.json();
+//       })
+//       .then(data => {
+//         res.render('armas', data
+//         )
+//       })
+//       .catch(error => {
+//         console.log(error);
+//         res.status(500).json({ error: 'Error al obtener los datos de la API' });
+//       });
+// };
 
 // API de Criaturas
 const creaturesAPI = (req,  res) => {
@@ -86,6 +99,9 @@ const renderAbout = (req, res)=>{
 const renderError = (req, res)=>{
   res.render('error')
 }
+// const renderBusqueda = (req, res) =>{
+//   res.render('buscar')
+// }
 
 module.exports ={
     renderIndex,
@@ -95,5 +111,6 @@ module.exports ={
     verAPImateriales,
     weaponsAPI,
     renderAbout,
-    renderError
+    renderError,
+    //renderBusqueda
 }

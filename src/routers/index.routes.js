@@ -1,5 +1,5 @@
 const {Router} = require('express')
-const {renderIndex, verAPItesoros, verAPImonstruos, verAPImateriales, weaponsAPI, creaturesAPI, renderAbout, renderError} = require('../controllers/index.controllers.js')
+const {renderIndex, verAPItesoros, verAPImonstruos, verAPImateriales, weaponsAPI, creaturesAPI, renderAbout, renderError, renderBusqueda} = require('../controllers/index.controllers.js')
 
 
 
@@ -12,6 +12,7 @@ router.get('/tesoros', verAPItesoros)
 router.get('/monstruos', verAPImonstruos)
 router.get('/materiales', verAPImateriales)
 router.get('/creatures', creaturesAPI)
+// router.get('/buscar', renderBusqueda)
 // router.use(renderError)
 // Si le agrego mueren los estilos
 // WHY!!!?

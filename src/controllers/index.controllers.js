@@ -22,7 +22,6 @@ const creaturesAPI = (req,  res) => {
       return response.json();
     })
     .then(data => {
-      console.log(data.data.non_food)
       res.render('creatures', data.data)
     })
     .catch(error => {
